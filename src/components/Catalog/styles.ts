@@ -37,8 +37,9 @@ export const CatalogCardImg = styled.img`
 `;
 
 export const CatalogCardTitle = styled.h2`
-  font-size: 20px;
+  font-size: 18px;
   margin: 8px;
+  text-transform: capitalize;
 
   @media screen and (max-width: 425px) {
     font-size: 16px;

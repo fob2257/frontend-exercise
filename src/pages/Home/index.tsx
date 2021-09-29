@@ -6,11 +6,11 @@ import { useCustom } from '../../providers/Custom.provider';
 function HomePage() {
   const ctx = useCustom();
 
-  const dogs = ctx?.data || [];
+  const dogs = ctx.availableDogs || [];
 
   return (
     <section className="homepage">
-      <Catalog dogs={dogs.slice(0, 6)} showAdoptBtn />
+      <Catalog dogs={dogs} showAdoptBtn />
     </section>
   );
 }
