@@ -1,15 +1,23 @@
 import React from 'react';
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from 'react-router-dom';
 
-import './App.css';
-
-import Catalog from './components/Catalog';
+import Navbar from './components/Navbar';
+import HomePage from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Adopt a puppie App</h1>
-      <Catalog />
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Redirect from="/home" to="/" />
+      </Switch>
+    </Router>
   );
 }
 
