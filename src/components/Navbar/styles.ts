@@ -10,9 +10,14 @@ export const Title = styled.h1<any>`
   margin: 8px;
   text-align: center;
   text-transform: uppercase;
+  font-size: 24px;
   ${(props) =>
     props.grow &&
     css`
       flex-grow: 1;
     `}
+
+  @media screen and (max-width: 425px) {
+    font-size: 18px;
+  }
 `;

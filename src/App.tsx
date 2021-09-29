@@ -6,17 +6,20 @@ import {
   Redirect
 } from 'react-router-dom';
 
+import CustomProvider from './providers/Custom.provider';
 import Navbar from './components/Navbar';
 import HomePage from './pages/Home';
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Redirect from="/home" to="/" />
-      </Switch>
+      <CustomProvider>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Redirect from="/home" to="/" />
+        </Switch>
+      </CustomProvider>
     </Router>
   );
 }

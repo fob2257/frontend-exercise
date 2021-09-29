@@ -6,6 +6,10 @@ export const CatalogContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
+
+  @media screen and (max-width: 425px) {
+    width: 100%;
+  }
 `;
 
 export const CatalogCard = styled.div`
@@ -15,6 +19,14 @@ export const CatalogCard = styled.div`
   border-radius: 8px;
   border: 1px solid #000;
   box-shadow: 4px 4px rgb(0 0 0 / 20%);
+
+  @media screen and (max-width: 1040px) {
+    width: 45%;
+  }
+
+  @media screen and (max-width: 425px) {
+    width: 100%;
+  }
 `;
 
 export const CatalogCardImg = styled.img`
@@ -27,8 +39,28 @@ export const CatalogCardImg = styled.img`
 export const CatalogCardTitle = styled.h2`
   font-size: 20px;
   margin: 8px;
+
+  @media screen and (max-width: 425px) {
+    font-size: 16px;
+  }
 `;
 
 export const HorizontalLine = styled.hr`
-  width: 90%;
+  margin: 8px;
+`;
+
+export const Button = styled.div`
+  background-color: #6495ed;
+  width: fit-content;
+  padding: 8px;
+  margin-left: 8px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+
+  @media screen and (max-width: 425px) {
+    width: auto;
+    margin-right: 8px;
+    text-align: center;
+  }
 `;

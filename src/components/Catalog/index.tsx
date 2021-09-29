@@ -5,20 +5,25 @@ import {
   CatalogCard,
   CatalogCardImg,
   CatalogCardTitle,
-  HorizontalLine
+  HorizontalLine,
+  Button
 } from './styles';
 
+import { Dog } from '../../interfaces';
+
 interface Props {
-  items: any[];
+  dogs: Dog[];
+  showAdoptBtn?: boolean;
 }
 
-const Catalog = ({ items }: Props) => (
+const Catalog = ({ dogs, showAdoptBtn = false }: Props) => (
   <CatalogContainer>
-    {items.map((dog: { id: string; title: string; url: string }, idx) => (
+    {dogs.map((dog, idx) => (
       <CatalogCard key={`${idx}-${dog.id}`}>
         <CatalogCardImg src={dog.url} alt={dog.title} />
         <CatalogCardTitle>{dog.title}</CatalogCardTitle>
         <HorizontalLine />
+        {showAdoptBtn && <Button>Adopt</Button>}
       </CatalogCard>
     ))}
   </CatalogContainer>

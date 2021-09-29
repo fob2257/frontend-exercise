@@ -1,24 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import Catalog from '../../components/Catalog';
-import { fetchDogs } from '../../utils/fetchDogs';
+import { useCustom } from '../../providers/Custom.provider';
 
 function HomePage() {
-  const [items, setItems] = useState<any[]>([]);
+  const ctx = useCustom();
 
-  const updateItems = async () => {
-    const { data } = await fetchDogs();
-
-    setItems(data);
-  };
-
-  useEffect(() => {
-    updateItems();
-  }, []);
+  const dogs = ctx?.data || [];
 
   return (
     <section className="homepage">
-      <Catalog items={items.slice(0, 6)} />
+      <Catalog dogs={dogs.slice(0, 6)} showAdoptBtn />
     </section>
   );
 }
